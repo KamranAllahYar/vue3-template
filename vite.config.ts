@@ -1,10 +1,12 @@
 import {loadEnv} from 'vite'
 import type {UserConfig, ConfigEnv} from 'vite';
+import vuetify from 'vite-plugin-vuetify'
 
 import vue from '@vitejs/plugin-vue'
 import {createProxy} from "./build/vite/proxy";
 import {wrapperEnv} from "./build/utils";
 import {resolve} from "path";
+
 function pathResolve(dir: string) {
     return resolve(process.cwd(), '.', dir);
 }
@@ -16,7 +18,10 @@ export default ({command, mode}: ConfigEnv): UserConfig => {
 
     const {VITE_PORT, VITE_PROXY} = viteEnv;
     return {
-        plugins: [vue()],
+        plugins: [
+            vue(),
+            vuetify(),
+        ],
         resolve: {
             alias: [
                 {

@@ -6,7 +6,7 @@ export enum PageEnum {
   REDIRECT = '/redirect',
   REDIRECT_NAME = 'Redirect',
   // Front page
-  BASE_HOME = '/',
+  BASE_HOME = '/driver/home',
   //Home page jump default route
   BASE_HOME_REDIRECT = '/dashboard/console',
   // Front page
